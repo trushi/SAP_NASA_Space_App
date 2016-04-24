@@ -1,0 +1,27 @@
+<mvc:View controllerName="wildcats.controller.Main" 
+    xmlns:html="http://www.w3.org/1999/xhtml" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m" height="100%">
+        <l:VerticalLayout height="100%">
+           
+	        <Button text="Home"
+    	        icon="sap-icon://home"
+    	        press="eventHome"></Button>
+            <html:br></html:br>
+    	    <Label text="Launch Site:" labelFor="lsite"></Label>  
+    	    
+            <Select id="lsite"
+                change="eventSelect"
+                forceSelection="false"
+        		items="{
+        			path: '/locations',
+        			sorter: { path: 'name' }
+        		}">
+        		<core:Item key="{yt_url}" text="{name}" />
+        	</Select>
+        	<html:br></html:br>
+        	<Link id="repLink" text="Space Launch report" href="http://www.spacelaunchreport.com/log2015.html"> </Link>
+        </l:VerticalLayout>
+</mvc:View>
